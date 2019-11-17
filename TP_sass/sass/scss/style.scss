@@ -1,0 +1,182 @@
+/*1. Créer une boucle pour obtenir la série de quatre classes ci-dessous. Le code doit
+permettre de changer le nombre de classes en modifiant un seul paramètre.*/
+$elements:4;
+@for $i from 1 through $elements {
+  .taille-#{$i} {
+    width:(100%/ $elements)* $i;
+  }
+}
+
+/*2. Créer un mixin correspondant au code de la question précédente*/
+@mixin generate_classes_taille(){
+  $elements:4;
+  @for $i from 1 through $elements {
+    .taille-#{$i} {
+      width:(100%/ $elements)* $i;
+    }
+  }
+}
+@include generate_classes_taille();
+/*3. Maintenant, utiliser la même boucle de la question 1 pour obtenir le code suivant.
+(Astuce : pensez à utiliser les tableaux).*/
+$i:0;
+$name:"petit","moyen","grand","enorme";
+@each $elements in $name {
+  .taille-#{$elements} {
+    $i:$i+1;
+    width:(100%/ length($name))* $i;
+  }
+}
+
+/*4. Créez un mixin correspondant au code de la question précédente.*/
+@mixin generate_classes_taille(){
+  $i:0;
+  $name:"petit","moyen","grand","enorme";
+  @each $elements in $name {
+    .taille-#{$elements} {
+      $i:$i+1;
+      width:(100%/ length($name))* $i;
+    }
+  }
+}
+@include generate_classes_taille();
+
+/*5.Rendre votre mixin générique à toutes les classes.  */
+@mixin tableau_tailles($classe, $liste){
+  $i:0;
+  @each $element in $liste{
+    .#{$classe}-#{$element}{
+      $i:$i+1;
+      width:(100%/length($liste))*$i;
+    }
+  }
+}
+$tableau_tailles:"petit","moyen","grand","enorme";
+@include tableau_tailles("bouton",$tableau_tailles);
+
+/*6. Créez une fonction sass permettant de renvoyer la valeur de la première entrée
+d’un tableau et testez-la sur votre tableau.*/
+@function firstInArray($array){
+  @return nth($array,1);
+}
+$tableau_tailles:"petit","moyen","grand","enorme";
+p{
+  content: firstInArray($tableau_tailles);
+}
+
+/*7. Créez une fonction sass permettant de renvoyer la valeur de la dernière entrée
+d’un tableau.*/
+@function lastInArray($array){
+  @return nth($array,length($array));
+}
+$tableau_tailles:"petit","moyen","grand","enorme";
+.bouton::after{
+  content: lastInArray($tableau_tailles);
+}
+/*8. Créez un tableau associatif (map) intitulée $destinations contenant
+plusieurs valeurs.*/
+$destinations: (Berlin: "Berlin", londres: "londres", milan: "milan", paris:"paris");
+@each $destination in $destinations{
+  .ville-#{nth($destination,1)}::before{
+    display: block;
+    content: "#{nth($destination,2)}";
+  }
+}
+
+/*9. Utilisez une boucle permettant de créer une série de classes css pour chacune des
+destinations sous la forme suivante*/
+$destinations: (Berlin: "Berlin", londres: "londres", milan: "milan", paris:"paris");
+@mixin ajouterTexte($prefix, $liste, $position){
+@each $element in $liste{
+  .#{$prefix}-#{nth($element,1)}::#{$position} {
+    display:block;
+    content: "#{nth($element,2)}";
+    }
+  }
+}
+@include ajouterTexte('ville', $destinations, 'after');
+
+/*10.Créez un mixin permettant de reproduire le code précédent de manière générique
+avec une option permettant d’insérer le texte avant ou après.
+Dans la suite, votre page HTML doit référencer le fichier généré dans le répertoire
+"css", tandis que vous continuerez à travailler sur le fichier scss.*/
+
+$destinations: (Berlin: "Berlin", londres: "londres", milan: "milan", paris:"paris");
+@mixin ajouterTexte($liste, $prefix:"toto", $position:"before"){
+@each $element in $liste{
+  .#{$prefix}-#{nth($element,1)}::#{$position} {
+    display:block;
+    content: "#{nth($element,2)}";
+    }
+  }
+}
+@include ajouterTexte($destinations,'ville','after');
+
+/*11.Créez un tableau associatif (map) intitulé $social et contenant :
+Une liste de réseau sociaux : facebook, twitter, linkedin, instagram, pinterest et youtube.
+Une couleur différente pour chaque réseau social.*/
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+$social:
+(facebook,#4682B4),
+(twitter,#87CEEB),
+(linkedin,#4682B4),
+(instagram,#b41279),
+(pinterest,#e00019),
+(youtube,#ff0000);
+
+/*12.Utilisez la map créée à la question 9 pour générer une série de classes sous la
+forme suivante*/
+@each $item in $social{
+  .fa-#{nth($item,1)}{
+    background:white;
+    color:#{nth($item,2)};
+    }
+}
+/*13.À l’aide du lien suivant https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
+créez un set d’éléments permettant de tester le code de la question précédente.*/
+
+
+/*14.Créez un mixin permettant de reproduire le code précédent de manière générique
+avec une option permettant de choisir le pourcentage d’éclaircissement de la
+couleur d’arrière plan.*/
+@mixin socialColor($percent){
+@each $item in $social{
+  .fa-#{nth($item,1)}{
+    background:#{lighten(nth($item,2), $percent)};
+    color:#{nth($item,2)};
+    }
+  }
+}
+@include socialColor(30%);
+
+/*15.Modifiez le mixin créé à la question précédente afin d’ajouter une option
+permettant de choisir d’éclaircir ou au contraire d’assombrir la couleur
+secondaire.*/
+@mixin socialColor($prefix,$social, $type,$percent){
+@each $item in $social{
+  .#{$prefix}-#{nth($item, 1)} {
+    color:#{nth($item, 2)} ;
+    @if($type == "light"){
+          background:#{lighten(nth($item,2), $percent)};
+    }
+    @else{
+      background:#{darken(nth($item,2), $percent)};
+    }
+  }
+    }
+  }
+
+@include socialColor('fa',$social,'dark',30%);

@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/*1. Créer une boucle pour obtenir la série de quatre classes ci-dessous. Le code doit
+permettre de changer le nombre de classes en modifiant un seul paramètre.*/
+.taille-1 {
+  width: 25%; }
+
+.taille-2 {
+  width: 50%; }
+
+.taille-3 {
+  width: 75%; }
+
+.taille-4 {
+  width: 100%; }
+
+/*2. Créer un mixin correspondant au code de la question précédente*/
+.taille-1 {
+  width: 25%; }
+
+.taille-2 {
+  width: 50%; }
+
+.taille-3 {
+  width: 75%; }
+
+.taille-4 {
+  width: 100%; }
+
+/*3. Maintenant, utiliser la même boucle de la question 1 pour obtenir le code suivant.
+(Astuce : pensez à utiliser les tableaux).*/
+.taille-petit {
+  width: 25%; }
+
+.taille-moyen {
+  width: 50%; }
+
+.taille-grand {
+  width: 75%; }
+
+.taille-enorme {
+  width: 100%; }
+
+/*4. Créez un mixin correspondant au code de la question précédente.*/
+.taille-petit {
+  width: 25%; }
+
+.taille-moyen {
+  width: 50%; }
+
+.taille-grand {
+  width: 75%; }
+
+.taille-enorme {
+  width: 100%; }
+
+/*5.Rendre votre mixin générique à toutes les classes.  */
+.bouton-petit {
+  width: 25%; }
+
+.bouton-moyen {
+  width: 50%; }
+
+.bouton-grand {
+  width: 75%; }
+
+.bouton-enorme {
+  width: 100%; }
+
+/*6. Créez une fonction sass permettant de renvoyer la valeur de la première entrée
+d’un tableau et testez-la sur votre tableau.*/
+p {
+  content: "petit"; }
+
+/*7. Créez une fonction sass permettant de renvoyer la valeur de la dernière entrée
+d’un tableau.*/
+.bouton::after {
+  content: "enorme"; }
+
+/*8. Créez un tableau associatif (map) intitulée $destinations contenant
+plusieurs valeurs.*/
+.ville-Berlin::before {
+  display: block;
+  content: "Berlin"; }
+
+.ville-londres::before {
+  display: block;
+  content: "londres"; }
+
+.ville-milan::before {
+  display: block;
+  content: "milan"; }
+
+.ville-paris::before {
+  display: block;
+  content: "paris"; }
+
+/*9. Utilisez une boucle permettant de créer une série de classes css pour chacune des
+destinations sous la forme suivante*/
+.ville-Berlin::after {
+  display: block;
+  content: "Berlin"; }
+
+.ville-londres::after {
+  display: block;
+  content: "londres"; }
+
+.ville-milan::after {
+  display: block;
+  content: "milan"; }
+
+.ville-paris::after {
+  display: block;
+  content: "paris"; }
+
+/*10.Créez un mixin permettant de reproduire le code précédent de manière générique
+avec une option permettant d’insérer le texte avant ou après.
+Dans la suite, votre page HTML doit référencer le fichier généré dans le répertoire
+"css", tandis que vous continuerez à travailler sur le fichier scss.*/
+.ville-Berlin::after {
+  display: block;
+  content: "Berlin"; }
+
+.ville-londres::after {
+  display: block;
+  content: "londres"; }
+
+.ville-milan::after {
+  display: block;
+  content: "milan"; }
+
+.ville-paris::after {
+  display: block;
+  content: "paris"; }
+
+/*11.Créez un tableau associatif (map) intitulé $social et contenant :
+Une liste de réseau sociaux : facebook, twitter, linkedin, instagram, pinterest et youtube.
+Une couleur différente pour chaque réseau social.*/
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none; }
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7; }
+
+/*12.Utilisez la map créée à la question 9 pour générer une série de classes sous la
+forme suivante*/
+.fa-facebook {
+  background: white;
+  color: #4682B4; }
+
+.fa-twitter {
+  background: white;
+  color: #87CEEB; }
+
+.fa-linkedin {
+  background: white;
+  color: #4682B4; }
+
+.fa-instagram {
+  background: white;
+  color: #b41279; }
+
+.fa-pinterest {
+  background: white;
+  color: #e00019; }
+
+.fa-youtube {
+  background: white;
+  color: #ff0000; }
+
+/*13.À l’aide du lien suivant https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
+créez un set d’éléments permettant de tester le code de la question précédente.*/
+/*14.Créez un mixin permettant de reproduire le code précédent de manière générique
+avec une option permettant de choisir le pourcentage d’éclaircissement de la
+couleur d’arrière plan.*/
+.fa-facebook {
+  background: #b2cce1;
+  color: #4682B4; }
+
+.fa-twitter {
+  background: white;
+  color: #87CEEB; }
+
+.fa-linkedin {
+  background: #b2cce1;
+  color: #4682B4; }
+
+.fa-instagram {
+  background: #f16ec1;
+  color: #b41279; }
+
+.fa-pinterest {
+  background: #ff7a89;
+  color: #e00019; }
+
+.fa-youtube {
+  background: #ff9999;
+  color: #ff0000; }
+
+/*15.Modifiez le mixin créé à la question précédente afin d’ajouter une option
+permettant de choisir d’éclaircir ou au contraire d’assombrir la couleur
+secondaire.*/
+.fa-facebook {
+  color: #4682B4;
+  background: #1b3246; }
+
+.fa-twitter {
+  color: #87CEEB;
+  background: #1f8dba; }
+
+.fa-linkedin {
+  color: #4682B4;
+  background: #1b3246; }
+
+.fa-instagram {
+  color: #b41279;
+  background: #29041c; }
+
+.fa-pinterest {
+  color: #e00019;
+  background: #470008; }
+
+.fa-youtube {
+  color: #ff0000;
+  background: #660000; }
+
+/*# sourceMappingURL=style.css.map */
