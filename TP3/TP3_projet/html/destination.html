@@ -2,43 +2,37 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Destinations</title>
 </head>
 <body>
   <header>
-    <h1>Agence tout risque</h1><hr>
-  </header>
+    <h1>Agence tout risque</h1>
+  </header><hr>
   <nav>
-    <ul id= menu>
-      <li class="menu-item"><a href="index.html">Accueil</a></li>
-      <li class="menu-item"><a href="menu.html">Menu</a></li>
-      <li class="menu-item"><a href="service.html">Services</a>
-        <ul class= sous-menu>
-          <li><a href="">Informations</a></li>
-          <li><a href="">Locations</a></li>
-          <li><a href="">Assistance</a></li>
-        </ul>
-      </li>
-      <li class="menu-item"><a href="destination.html">Destinations</a></li>
-      <li class="menu-item"><a href="audio.html">Voyage virtuel: audio</a></li>
-      <li class="menu-item"><a href="video.html">Voyage virtuel: vidéo</a></li>
-      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    <ul class="row justify-content-around" id="menu"></ul>
+    <!-- ajout via le js -->
   </nav><hr>
-  <h2>Destination</h2>
+  <div id="createButton">
+  <!-- formulaire  -->
+  <h2>Ajouter une destination</h2>
+  <form id="AddForm" action="" method="post"></form>
   <div class="destination">
   <table summary="voyages">
     <tbody id="destinations">
     <tr>
-      <th>Pays</th>
-      <th>Circuit</th>
-      <th>Prix</th>
-      <th>Réservation</th>
-      <th>Images</th>
+      <th scope="col">Pays</th>
+      <th scope="col">Circuit</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Images</th>
+      <th scope="col">Réservation</th>
     </tr>
   </tbody>
-  </table>
-</div>
+</table>
+</div><hr>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>

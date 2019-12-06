@@ -1,19 +1,8 @@
 body{
-  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 1100px 800px;
   background-position: center;
-  background-color: #BDB76B;
-  background-attachment: fixed;
+  background-color: #FFFFFF;
   font-family: "times new roman";
-
-}
-
-h1{
-  text-align: center;
-  text-transform: uppercase;
-  background-color: brown;
-  color:white;
 
 }
 
@@ -38,14 +27,14 @@ table{
   background-color: rgba(244, 243, 243,0.5);
 }
 th {
-  background-color: brown;
-  color: white;
-  width:180px;
+  background-color: #D2B48C;
+  color: black;
+  width:200px;
   text-align: justify;
 }
 
 tr:hover {
-  background-color:khaki;
+  background-color: #F5F5DC;
 }
 
 th, td {
@@ -54,18 +43,12 @@ th, td {
 
 /*navigation*/
 nav {
-  background-color: brown;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top:60px;
-  left:0px;
+  background-color: #D2B48C;
   width: 100%;
 }
 
 nav #menu a{
-  padding: 16px;
-  color:white;
+  color:black;
   text-decoration: none;
 
 
@@ -93,7 +76,7 @@ nav .sous-menu{
 nav #menu{
   list-style-type:none;
   display: flex;
-  justify-content: space-between;
+
 }
 
 nav #menu .menu-item{
@@ -120,4 +103,14 @@ nav .menu-item:hover .sous-menu{
 
 label{
 display: block;
+}
+
+
+#AddForm{
+  text-align: center;
+  background-color: #F5F5DC;
+}
+
+h2{
+  text-align: center;
 }
