@@ -1,7 +1,7 @@
 body{
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 1100px 800px;
+  background-size: 1000px 700px;
   background-position: center;
   background-color: #BDB76B;
   background-attachment: fixed;
@@ -12,7 +12,6 @@ body{
 h1{
   text-align: center;
   text-transform: uppercase;
-  background-color: brown;
   color:white;
 
 }
@@ -85,8 +84,10 @@ nav .sous-menu{
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 70px;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -98,15 +99,17 @@ nav #menu{
 
 nav #menu .menu-item{
   position: relative;
+  display: block;
+
 }
 
 nav .menu-item:hover .sous-menu{
-  background: tomato;
+  background: brown;
   position: absolute;
   visibility: visible;
   display: block;
   top: 30px;
-  left: 0px;
+
 }
 
 /*Formulaire contact*/

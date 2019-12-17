@@ -2,7 +2,7 @@ window.addEventListener("load", displayFunction);
 
 
 function displayFunction(){
-  //randomNumber();
+  randomNumber();
   document.getElementById("bouton").addEventListener("click",country);
 }
 

@@ -108,7 +108,8 @@ function destination(){
 /////////// Modifier une destination //////////////////////////////
   function updateDestination(){
     $('#updateDestination').click(function(){
-      $('destinations').val()
+      $('destinations').val("#input-country")
+      $("#input_country").html()
 
 
 
