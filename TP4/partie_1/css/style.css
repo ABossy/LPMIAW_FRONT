@@ -16,6 +16,12 @@ main {
   display: flex;
   justify-content: center; }
 
+blockquote {
+  column-count: 3;
+  column-gap: 40px;
+  column-rule-style: solid;
+  column-rule-width: 1px; }
+
 table {
   border-collapse: collapse;
   background-color: rgba(244, 243, 243, 0.5); }
@@ -88,6 +94,57 @@ label {
 h2 {
   text-align: center; }
 
+.containerCustom {
+  max-width: 40%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative; }
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px; }
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%; }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px; }
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none; }
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  padding: 10px;
+  font-size: 15px; }
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa; }
+
 .destination #destinations {
   flex: 1 1 auto;
   display: flex;
@@ -135,5 +192,30 @@ h2 {
     order: 4; }
   .destination-card__tools {
     order: 5; }
+
+.video #videos {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1200px;
+  padding: 15px; }
+  .video #videos .video-item {
+    width: 100%;
+    padding: 15px; }
+    @media (min-width: 768px) {
+      .video #videos .video-item {
+        width: 33.3333333333%; } }
+    @media (min-width: 1024px) {
+      .video #videos .video-item {
+        width: 25%; } }
+
+.video-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  display: flex;
+  flex-flow: column; }
 
 /*# sourceMappingURL=style.css.map */
