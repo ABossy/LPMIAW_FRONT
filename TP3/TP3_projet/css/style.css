@@ -1,116 +1,23 @@
-body{
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #FFFFFF;
-  font-family: "times new roman";
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - sass/style.scss
 
-}
-
-main{
-  border: 2px, black;
-  border-radius: 15px;
-  background-color: rgba(244, 243, 243,0.5);
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-
-
-}
-
-.destination, .audio, .video{
-  display: flex;
-  justify-content: center;
-
-}
-table{
-  border-collapse: collapse;
-  background-color: rgba(244, 243, 243,0.5);
-}
-th {
-  background-color: #D2B48C;
-  color: black;
-  width:200px;
-  text-align: justify;
-}
-
-tr:hover {
-  background-color: #F5F5DC;
-}
-
-th, td {
-  border-bottom: 1px solid #ddd;
-}
-
-/*navigation*/
-nav {
-  background-color: #D2B48C;
-  width: 100%;
-}
-
-nav #menu a{
-  color:black;
-  text-decoration: none;
-
-
-}
-nav #menu .menu-item:hover {
-  background-color: grey;
-}
-
-nav a:hover .sous-menu{
-  visibility: visible;
-
-}
-
-nav .sous-menu{
-  list-style-type: none;
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50px;
-  height: 50px;
-
-}
-
-nav #menu{
-  list-style-type:none;
-  display: flex;
-
-}
-
-nav #menu .menu-item{
-  position: relative;
-}
-
-nav .menu-item:hover .sous-menu{
-  background: tomato;
-  position: absolute;
-  visibility: visible;
-  display: block;
-  top: 30px;
-  left: 0px;
-}
-
-/*Formulaire contact*/
-.formulaire{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(244, 243, 243,0.5);
-
-}
-
-label{
-display: block;
-}
-
-
-#AddForm{
-  text-align: center;
-  background-color: #F5F5DC;
-}
-
-h2{
-  text-align: center;
-}
+Backtrace:
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:454:in `read'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:454:in `update_stylesheet'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:294:in `watch'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/plugin.rb:109:in `method_missing'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - sass/style.scss"; }

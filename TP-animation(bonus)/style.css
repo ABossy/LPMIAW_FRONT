@@ -1,0 +1,23 @@
+input {
+  margin-bottom: 10px;
+}
+button {
+  margin-bottom: 10px;
+}
+
+#bar-container {
+  background-color: white;
+  height: 33px;
+  width: 305px;
+  border: 1px solid black;
+  border-radius: 15px;
+
+}
+#loader {
+  height: 26px;
+  width: 0px;
+  margin: 1px;
+  border-radius: 15px;
+  color: black;
+  text-align: center;
+}

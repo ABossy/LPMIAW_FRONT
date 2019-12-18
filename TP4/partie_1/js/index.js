@@ -166,8 +166,7 @@ function destination(){
 /////////// Modifier une destination //////////////////////////////
   function updateDestination(){
     $('#updateDestination').click(function(){
-      $('destinations').val("#input-country")
-      $("#input_country").html()
+/// pas eu le temps de finir
 
 
 
@@ -182,16 +181,16 @@ function destination(){
     <div class="containerCustom">
             <form id="contact">
                 <fieldset>
-                    <input placeholder="Votre nom" type="text" tabindex="1" required autofocus>
+                    <input placeholder="nom" type="text" tabindex="1" required autofocus>
                 </fieldset>
                 <fieldset>
-                    <input placeholder="Votre adresse mail" type="email" tabindex="2" required>
+                    <input placeholder="adresse mail" type="email" tabindex="2" required>
                 </fieldset>
                 <fieldset>
-                    <input placeholder="Votre numéro de téléphone (facultatif)" type="tel" tabindex="3" required>
+                    <input placeholder="numéro de téléphone (facultatif)" type="tel" tabindex="3" required>
                 </fieldset>
                 <fieldset>
-                    <textarea placeholder="Ecrivez votre message..." tabindex="5" required></textarea>
+                    <textarea placeholder="message..." tabindex="5" required></textarea>
                 </fieldset>
                 <fieldset>
                     <button name="Envoyez" type="submit" id="contact-submit" data-submit="...Envoie">Submit</button>
@@ -205,8 +204,11 @@ function destination(){
 
   function video(){
     var videoDestination = [
-      {Titre:"Etats-Unis",Description:"Zion",Video:"../video/usa.mp4"},
-      {Titre:"Norvege",Description:"Oslo",Video:"../video/iceland.mp4"},
+      {Titre:"Etats-Unis",Description:"Le parc national de Zion est une réserve naturelle du sud-ouest de l'Utah, célèbre pour les falaises rouges abruptes du canyon de Zion.",Video:"../video/usa.mp4"},
+      {Titre:"San Francisco",Description:"San Francisco, en Californie du Nord, est une ville vallonnée à la pointe d'une péninsule entourée par l'océan Pacifique et la baie de San Francisco.",Video:"../video/SF.mp4"},
+      {Titre:"Islande",Description:"L'Islande est un pays insulaire nordique aux paysages spectaculaires composés de volcans, geysers, sources chaudes et champs de lave.",Video:"../video/iceland.mp4"},
+      {Titre:"Japon",Description:"Le Japon est un pays insulaire situé dans l'océan Pacifique. Il comporte des villes denses, des palais impériaux, des parcs nationaux montagneux ainsi que des milliers de temples et de sanctuaires.",Video:"../video/japan.mp4"},
+
 
     ];
 
@@ -227,18 +229,17 @@ function destination(){
 }
 
 function texteAccueil(){
-  texte = `      <blockquote>
+  texte = ` <div class="presentation"
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </blockquote>
-        <p class="text-justify"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></i>
-        </article>
-        <hr>
 
         <h3>Informations pratiques</h3>
         <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+
           <footer>Copyright (c) 2018 Copyright Holder All Rights Reserved.</footer>
   `
     $('.Description').html(texte);
