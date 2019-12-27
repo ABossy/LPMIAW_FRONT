@@ -39,15 +39,17 @@ navbar = `
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-      <a class="nav-link dropdown-toggle" href="menu.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Menu
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Connexion</a>
-        <a class="dropdown-item" href="#">Recherche</a>
-        <a class="dropdown-item" href="#">Reservation</a>
-        <a class="dropdown-item" href="#">Promotion</a>
-      </div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="menu.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Connexion</a>
+          <a class="dropdown-item" href="#">Recherche</a>
+          <a class="dropdown-item" href="#">Reservation</a>
+          <a class="dropdown-item" href="#">Promotion</a>
+        </div>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Services
