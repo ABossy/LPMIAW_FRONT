@@ -2,11 +2,10 @@ $(document).ready(function(){
   var locationArray = document.location.pathname.split('/');
   var filename = locationArray[locationArray.length -1];
   menu();
+  mainFooter()
   if(filename == "destination.html"){
     destination();
     form();
-    addDestination();
-    deleteDestination();
   }
 
   if(filename == "contact.html"){
@@ -19,6 +18,7 @@ $(document).ready(function(){
 
   if(filename == "index.html"){
     texteAccueil();
+    imagesAccueil();
   }
 
   if(filename == "localisation.html"){
@@ -30,47 +30,56 @@ $(document).ready(function(){
 
 //Navbar//////////////////
 function menu(){
-navbar = `
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ATR</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="menu.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Connexion</a>
-          <a class="dropdown-item" href="#">Recherche</a>
-          <a class="dropdown-item" href="#">Reservation</a>
-          <a class="dropdown-item" href="#">Promotion</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="information.html">Informations</a>
-          <a class="dropdown-item" href="localisation.html">Localisations</a>
-          <a class="dropdown-item" href="assistance.html">Assistance</a>
-        </div>
-      </li>
-      <li class="nav-item"><a href="destination.html" class="nav-link">Destinations</a></li>
-      <li class="nav-item"><a href="audio.html" class="nav-link">Voyage virtuel: audio</a></li>
-      <li class="nav-item"><a href="video.html" class="nav-link">Voyage virtuel: vidéo</a></li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+  var locationArray = document.location.pathname.split('/');
+  var filename = locationArray[locationArray.length -1];
 
-    </ul>
-  </div>
-</nav>
-`;
+  var classNames = filename === "index.html" ? "navbar-dark" : "navbar-light bg-light"
+  navbar = `
+  <nav class="navbar navbar-expand-lg ${classNames}">
+    <a class="navbar-brand" href="#">ATR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="menu.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Connexion</a>
+            <a class="dropdown-item" href="#">Recherche</a>
+            <a class="dropdown-item" href="#">Reservation</a>
+            <a class="dropdown-item" href="#">Promotion</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="information.html">Informations</a>
+            <a class="dropdown-item" href="localisation.html">Localisations</a>
+            <a class="dropdown-item" href="assistance.html">Assistance</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="destination.html" class="nav-link">Destinations</a></li>
+        <li class="nav-item"><a href="audio.html" class="nav-link">Voyage virtuel: audio</a></li>
+        <li class="nav-item"><a href="video.html" class="nav-link">Voyage virtuel: vidéo</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+      </ul>
+    </div>
+  </nav>
+  `;
 
   $('#menu').html(navbar);
+}
+
+// pied de page commun
+function mainFooter() {
+  $('#mainFooter').html(`<p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>`);
 }
 
 // formulaire add destination
@@ -235,20 +244,53 @@ function destination(){
 }
 
 function texteAccueil(){
-  texte = ` <div class="presentation"
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></i>
+  texte = `
+    <h1>Agence tout risque</h1>
+    <div class="presentation">
 
-        <h3>Informations pratiques</h3>
-        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
 
-          <footer>Copyright (c) 2018 Copyright Holder All Rights Reserved.</footer>
+    </div>
   `
-    $('.Description').html(texte);
+    $('main').html(texte);
+}
+
+function imagesAccueil() {
+  var imagesList = [
+    '../img/backgrounds/jack-anstey-XVoyX7l9ocY-unsplash.jpg',
+    '../img/backgrounds/jamie-hagan-RWzPBcWVdpw-unsplash.jpg',
+    '../img/backgrounds/norris-niman-ABtmE3jhaPQ-unsplash.jpg',
+    '../img/backgrounds/yuriy-garnaev-fcDnEf0TUV0-unsplash.jpg'
+  ];
+
+  var $images = $( '<figure class="slideshow"></figure>' );
+
+  $images.html( imagesList.map( src => `<img src="${ src }" alt=""/>`).join( '' ) );
+
+
+
+  $( 'body' ).append( $images );
+
+  imagesAccueilSlideshow( { $el: $images, timeout: 3000 } );
+
+
+}
+
+function imagesAccueilSlideshow( { $el, timeout } ) {
+  var $currentImage = $el.find( 'img.on' );
+
+  var $nextImage = $currentImage.length && $currentImage.next( 'img' );
+  if ( !$nextImage.length ) {
+    $nextImage = $el.find( 'img:eq(0)' );
+  }
+
+  $el.find( 'img' ).removeClass( 'on' );
+  $nextImage.addClass( 'on' );
+
+  setTimeout( () => { imagesAccueilSlideshow( { $el, timeout } ); }, timeout );
 }
 
 function map(){
