@@ -109,6 +109,15 @@ nav .menu-item:hover .sous-menu {
   left: 0px;
 }
 
+//
+#menu {
+  nav {
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+  }
+}
+
 /*Formulaire contact*/
 .formulaire {
   display: flex;
