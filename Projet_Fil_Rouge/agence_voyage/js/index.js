@@ -233,14 +233,16 @@ function destination(){
     ];
 
     videoDestination.forEach(videoDestination => {
-      $("#videos").append(
+      $(".videos-list").append(
         `<div class="video-item">
         <div class="video-card">
           <header class="video-card__header">
-            <h1 class="video-card__titre">${videoDestination.Titre}</h1>
+            <h1 class="video-card__title">${videoDestination.Titre}</h1>
           </header>
           <p class="video-card__description">${videoDestination.Description}</p>
-          <video controls autoplay width="230px" height="230px"src="${videoDestination.Video}">
+          <figure class="video-card__video">
+            <video controls autoplay width="230px" height="230px"src="${videoDestination.Video}">
+          </figure>
         </div>
         </div>
         `)

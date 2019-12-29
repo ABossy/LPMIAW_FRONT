@@ -92,6 +92,7 @@ body.destinations {
     margin: 15px -15px;
 
     .destination-item {
+      display: flex;
       // prend toute la largeur de l'écran sur mobile
       width: 100%;
 
