@@ -269,7 +269,7 @@ function texteAccueil(){
 function imagesAccueil() {
   var imagesList = [
     '../img/backgrounds/jack-anstey-XVoyX7l9ocY-unsplash.jpg',
-    '../img/backgrounds/jamie-hagan-RWzPBcWVdpw-unsplash.jpg',
+    '../img/backgrounds/matthias-mullie--qg1-dATq0U-unsplash.jpg',
     '../img/backgrounds/norris-niman-ABtmE3jhaPQ-unsplash.jpg',
     '../img/backgrounds/yuriy-garnaev-fcDnEf0TUV0-unsplash.jpg'
   ];

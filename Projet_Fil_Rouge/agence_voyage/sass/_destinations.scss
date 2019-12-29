@@ -107,6 +107,10 @@ body.destinations {
       @media (min-width: 1024px) {
         width: percentage(1/4);
       }
+
+      .destination-card {
+        flex: 1;
+      }
     }
   }
 }
