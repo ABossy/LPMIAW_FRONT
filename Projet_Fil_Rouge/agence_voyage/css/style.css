@@ -471,6 +471,80 @@ body.destinations .destinations-list .destination-item {
   order: 5;
 }
 
+body.audio {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.audio .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.audio .wrapper > header {
+  display: none;
+}
+body.audio .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.audio .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.audio .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.audio .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.audio .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.audio .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.audio .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.audio .wrapper > main {
+    padding: 60px;
+  }
+}
+body.audio .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.audio .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.audio .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.audio .wrapper > main h2 {
+  text-align: left;
+}
+
 .video #videos {
   flex: 1 1 auto;
   display: flex;
