@@ -3,19 +3,7 @@ html {
 }
 body {
   min-height: 100%;
-  // background-repeat: no-repeat;
-  // background-position: center;
   background-color: #fff;
-  // font-family: "times new roman";
-}
-
-main {
-  // border: 2px, black;
-  // border-radius: 15px;
-  // background-color: rgba(244, 243, 243, 0.5);
-  // display: flex;
-  // flex-direction: column;
-  // font-size: 18px;
 }
 
 //map leaflet
@@ -29,15 +17,6 @@ main {
   display: flex;
   justify-content: center;
 }
-
-// .presentation {
-//   margin-left: 20px;
-//   margin-right: 20px;
-//   column-count: 3;
-//   column-gap: 40px;
-//   column-rule-style: solid;
-//   column-rule-width: 1px;
-// }
 
 footer {
   text-align: center;
@@ -65,7 +44,6 @@ td {
 
 /*navigation*/
 nav {
-  // background-color: #d2b48c;
   width: 100%;
 }
 
@@ -137,11 +115,6 @@ label {
   display: block;
 }
 
-// #AddForm {
-//   text-align: center;
-//   background-color: #f5f5dc;
-// }
-
 h2 {
   text-align: center;
 }
@@ -153,13 +126,6 @@ h2 {
   position: relative;
 }
 
-// #contact h3 {
-//   display: block;
-//   font-size: 30px;
-//   font-weight: 300;
-//   margin-bottom: 10px;
-// }
-
 fieldset {
   border: medium none !important;
   margin: 0 0 10px;
@@ -167,23 +133,6 @@ fieldset {
   padding: 0;
   width: 100%;
 }
-
-// #contact input[type="text"],
-// #contact input[type="email"],
-// #contact input[type="tel"],
-// #contact textarea {
-//   width: 100%;
-//   border: 1px solid #ccc;
-//   background: #fff;
-//   margin: 0 0 5px;
-//   padding: 10px;
-// }
-
-// #contact input:focus,
-// #contact textarea:focus {
-//   outline: 0;
-//   border: 1px solid #aaa;
-// }
 
 @import "homepage";
 @import "services";
