@@ -1,34 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<head>
-  <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
-  <title>Destinations</title>
-</head>
-<body>
-  <header>
-    <h1>Agence tout risque</h1>
-  </header><hr>
-  <div id="menu"></div>
-  <hr>
-  <div id="createButton">
-  <!-- formulaire  -->
-  <h2>Ajouter une destination</h2>
-  <form id="AddForm" action="" method="post"></form>
-  <div class="destination">
-    <div id="destinations">
+    <title>Destinations</title>
+  </head>
+  <body class="destinations">
+    <div class="wrapper">
+      <header>
+        <h1>Agence tout risque</h1>
+      </header>
 
-  </div>
-</div><hr>
+      <div id="menu"></div>
 
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/index.js"></script>
+      <main>
+        <header class="main">
+          <h1>Destinations</h1>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            <i class="fa fa-plus-circle"></i>
+            Ajouter une destination
+          </button>
+        </header>
+
+        <div id="destinations" class="destinations-list"></div>
+      </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="AddForm" action="" method="post">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Ajouter une destination
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fermer"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- formulaire  -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Fermer
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Valider
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

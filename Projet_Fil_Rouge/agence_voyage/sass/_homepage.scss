@@ -1,7 +1,4 @@
 body.homepage {
-  //   background: linear-gradient(10deg, rgba(#000, 0.5) 50%, rgba(#000, 0)),
-  //     #000 url(../img/backgrounds/jack-anstey-XVoyX7l9ocY-unsplash.jpg) no-repeat
-  //       center / cover;
   background-color: #000;
   color: #fff;
 
@@ -69,7 +66,25 @@ body.homepage {
       }
 
       .presentation {
-        max-width: 600px;
+        // max-width: 600px;
+        @media (min-width: 768px) {
+          display: flex;
+
+          margin: 0 -15px;
+
+          > p {
+            flex: 1;
+            padding: 15px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          margin: 0 -30px;
+
+          > p {
+            padding: 30px;
+          }
+        }
       }
     }
   }

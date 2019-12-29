@@ -1,13 +1,94 @@
-.destination {
-  #destinations {
+body.destinations {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
 
+  display: flex;
+
+  .wrapper {
     flex: 1 1 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > header {
+      display: none;
+    }
+
+    > #menu {
+      position: relative;
+      z-index: 10;
+      flex: 0 1 auto;
+
+      nav {
+        background: transparent !important;
+        padding: 15px;
+
+        @media (min-width: 768px) {
+          padding: 15px 30px;
+        }
+
+        @media (min-width: 1024px) {
+          padding: 30px 60px;
+        }
+      }
+    }
+
+    > footer {
+      z-index: 2;
+      flex: 0 1 auto;
+      // border: 10px solid red;
+      font-size: 12px;
+    }
+
+    > main {
+      z-index: 2;
+      flex: 1 1 auto;
+
+      display: flex;
+
+      flex-direction: column;
+      //   justify-content: flex-end;
+      padding: 15px;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 60px;
+      }
+
+      header.main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      h1 {
+        font-family: "Merriweather", serif;
+      }
+
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+
+  .destinations-list {
+    flex: 0 1 auto;
 
     display: flex;
     flex-flow: row wrap;
 
     max-width: 1200px;
-    padding: 15px;
+    // padding:  0;
+    margin: 15px -15px;
 
     .destination-item {
       // prend toute la largeur de l'écran sur mobile
@@ -28,7 +109,6 @@
   }
 }
 
-
 .destination-card {
   background: #fff;
   border-radius: 6px;
@@ -48,7 +128,7 @@
 
     &::before {
       display: block;
-      content:"";
+      content: "";
       padding-bottom: 50%;
     }
 
@@ -62,7 +142,9 @@
       object-fit: cover;
     }
   }
-
+  &__title {
+    font-size: 2rem;
+  }
   &__header {
     order: 2;
   }
@@ -78,5 +160,4 @@
   &__tools {
     order: 5;
   }
-
 }

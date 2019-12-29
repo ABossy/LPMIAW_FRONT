@@ -137,10 +137,10 @@ label {
   display: block;
 }
 
-#AddForm {
-  text-align: center;
-  background-color: #f5f5dc;
-}
+// #AddForm {
+//   text-align: center;
+//   background-color: #f5f5dc;
+// }
 
 h2 {
   text-align: center;
@@ -206,5 +206,6 @@ fieldset {
 }
 
 @import "homepage";
+@import "services";
 @import "destinations";
 @import "videos";

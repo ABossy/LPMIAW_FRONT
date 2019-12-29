@@ -6,6 +6,7 @@ $(document).ready(function(){
   if(filename == "destination.html"){
     destination();
     form();
+    addDestination();
   }
 
   if(filename == "contact.html"){
@@ -21,7 +22,7 @@ $(document).ready(function(){
     imagesAccueil();
   }
 
-  if(filename == "localisation.html"){
+  if(filename == "services.html"){
     map();
   }
 
@@ -30,8 +31,7 @@ $(document).ready(function(){
 
 //Navbar//////////////////
 function menu(){
-  var locationArray = document.location.pathname.split('/');
-  var filename = locationArray[locationArray.length -1];
+  var filename = document.location.pathname.split('/').slice(-1)[0];
 
   var classNames = filename === "index.html" ? "navbar-dark" : "navbar-light bg-light"
   navbar = `
@@ -54,15 +54,10 @@ function menu(){
             <a class="dropdown-item" href="#">Promotion</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+          <a href="services.html" class="nav-link" >
             Services
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="information.html">Informations</a>
-            <a class="dropdown-item" href="localisation.html">Localisations</a>
-            <a class="dropdown-item" href="assistance.html">Assistance</a>
-          </div>
         </li>
         <li class="nav-item"><a href="destination.html" class="nav-link">Destinations</a></li>
         <li class="nav-item"><a href="audio.html" class="nav-link">Voyage virtuel: audio</a></li>
@@ -85,42 +80,39 @@ function mainFooter() {
 // formulaire add destination
 function form(){
   formulaire = `
-        <div>
+        <div class="form-group">
             <label for="input-country">Pays</label>
-            <input type="text" id="input-country">
+            <input type="text" id="input-country" class="form-control">
         </div>
-        <div>
+        <div class="form-group">
             <label for="input-circuit">Circuit</label>
-            <input type="text" id="input-circuit">
+            <input type="text" id="input-circuit" class="form-control">
         </div>
-        <div>
+        <div class="form-group">
             <label for="input-image">Image</label>
-            <input type="text" id="input-image" placeholder="../img/norvege.jpg">
+            <input type="text" id="input-image" placeholder="../img/norvege.jpg" class="form-control">
         </div>
-        <div>
+        <div class="form-group">
             <label for="input-price">Prix</label>
-            <input type="number" id="input-price">
-        </div>
-        <div>
-          <button type="button" class="btn btn-info" id="saveDestination">valider</button>
+            <input type="number" id="input-price" class="form-control">
         </div>
     `;
 
-    $('#AddForm').html(formulaire);
+    $('#exampleModal').find( '.modal-body' ).html(formulaire);
   }
 
 //Page Destination ///////////////////////////////////
 function destination(){
 
   var destinations = [
-    {Pays:"Etats-Unis",Circuit:"Zion",Prix:1500, Images:"../img/usa.jpg"},
-    {Pays:"Norvege",Circuit:"Oslo",Prix:1800,Images:"../img/norvege.jpg"},
-    {Pays:"Islande",Circuit:"Reykjavik",Prix:2000,Images:"../img/islande.jpg"},
-    {Pays:"Ecosse",Circuit:"Glasgow",Prix:1000,Images:"../img/ecosse.jpg"},
+    {Pays:"Etats-Unis",Circuit:"Zion",Prix:1500, Image:"../img/usa.jpg"},
+    {Pays:"Norvege",Circuit:"Oslo",Prix:1800,Image:"../img/norvege.jpg"},
+    {Pays:"Islande",Circuit:"Reykjavik",Prix:2000,Image:"../img/islande.jpg"},
+    {Pays:"Ecosse",Circuit:"Glasgow",Prix:1000,Image:"../img/ecosse.jpg"},
   ];
 
   destinations.forEach(destinations => {
-    $("#destinations").append(
+    $(".destinations-list").append(
       `<div class="destination-item">
       <div class="destination-card">
         <header class="destination-card__header">
@@ -128,7 +120,9 @@ function destination(){
         </header>
         <p class="destination-card__country">${destinations.Pays}</p>
         <p class="destination-card__price">${destinations.Prix}€</p>
-        <figure class="destination-card__image"><img width="230px"height="150px" alt="islande" title="islande" src="${destinations.Images}"></figure>
+        <figure class="destination-card__image">
+          <img width="230px"height="150px" alt="${destinations.Circuit}" title="${destinations.Circuit}" src="${destinations.Image}">
+        </figure>
         <div class="destination-card__tools">
           <button type="button" class="btn btn-warning" id="updateDestination">modifier</button>
           <button type="button" class="btn btn-danger" onclick="deleteDestination(this)" >supprimer</button>
@@ -140,7 +134,8 @@ function destination(){
 
 //////////// AJout d'une destination /////////////////////////////
   function addDestination(){
-    $('#saveDestination').click(function() {
+    $('#AddForm').submit(function(event) {
+      console.warn( 'toto')
       event.preventDefault();
       data = [ $('#input-country').val(),
         $('#input-circuit').val(),
@@ -148,7 +143,7 @@ function destination(){
         $('#input-image').val()
       ];
 
-      $('#destinations').append(`
+      $('.destinations-list').append(`
         <div class="destination-item">
         <div class="destination-card">
           <header class="destination-card__header">
@@ -158,24 +153,27 @@ function destination(){
           <p class="destination-card__country">${data[1]}</p>
 
           <p class="destination-card__price">${data[2]}€</p>
-          <figure class="destination-card__image"><img width="230px"height="150px" alt="islande" title="islande" src="${data[3]}"></figure>
-
-
+          <figure class="destination-card__image"><img width="230" height="150" alt="${data[0]}" title="${data[0]}" src="${data[3]}"></figure>
           <div class="destination-card__tools">
             <button type="button" class="btn btn-warning" id="updateDestination">modifier</button>
             <button type="button" class="btn btn-danger" onclick="deleteDestination(this)" >supprimer</button>
           </div>
         </div>
         </div>
-        `)
+        `);
+      $('#exampleModal').modal( 'hide' );
 
      });
+
+
   }
 
 //////////////// Supprimer une destination //////////////////////////////
   function deleteDestination(btn){
-    var row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
+    var $parent = $(btn).parents( '.destination-item' );
+    $parent.remove();
+    // var row = btn.parentNode.parentNode;
+    // row.parentNode.removeChild(row);
   }
 
 /////////// Modifier une destination //////////////////////////////
@@ -247,10 +245,11 @@ function texteAccueil(){
   texte = `
     <h1>Agence tout risque</h1>
     <div class="presentation">
-
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Poussez la porte de notre Cité des voyageurs et découvrez un espace entièrement dédiés à vos projets de voyage. Riches de leur expérience et de leurs passions, nos spécialistes vous aideront à élaborer un voyage sur mesure correspondant parfaitement à vos attentes. Périples culturels, week-ends, voyages à la carte en individuel, quel que soit votre désir et votre destination, vous trouverez ici une solution à des prix attractifs puisque vendue en direct et sans intermédiaire.
+      </p>
+      <p>
+        Aménagée en 2005, notre Cité des Voyageurs se distingue par une ambiance étonnante, à laquelle participent son mur décoratif d’escalade et sa passerelle très aérienne. Anecdotiques au premier abord, ces détails décoratifs reflètent aussi l’esprit de Voyageurs du Monde qui souhaite que les émotions du voyage naissent dès votre première visite.
       </p>
 
     </div>
@@ -317,13 +316,18 @@ function map(){
     }
   ];
 
-  locations.forEach( ({ name, latLng }) => {
-    const myIcon = L.icon({
-        iconUrl: '../img/travel.png',
-        iconSize: [32, 32],
-        iconAnchor: [16, 16],
-        popupAnchor: [0, -16]
-    });
+  locations.forEach( ({ name, latLng }, i) => {
+
+    const myIcon = L.icon(
+      {
+        // le premier site de la liste est le siège et possède une icone distinctive
+        iconUrl: i===0 ? '../img/logo.svg':'../img/logo-alt.svg',
+        iconSize: [48, 48],
+        iconAnchor: [24, 24],
+        popupAnchor: [0, -24]
+      }
+    );
+
     const marker = L.marker(latLng, {icon: myIcon}).addTo(mymap);
 
     marker.bindPopup(name);
