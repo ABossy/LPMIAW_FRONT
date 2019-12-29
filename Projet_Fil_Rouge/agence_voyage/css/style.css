@@ -120,56 +120,12 @@ h2 {
   position: relative;
 }
 
-#contact h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
 fieldset {
   border: medium none !important;
   margin: 0 0 10px;
   min-width: 100%;
   padding: 0;
   width: 100%;
-}
-
-#contact input[type=text],
-#contact input[type=email],
-#contact input[type=tel],
-#contact textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #fff;
-  margin: 0 0 5px;
-  padding: 10px;
-}
-
-#contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
-}
-
-#contact button[type=submit] {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  background: #4caf50;
-  color: #fff;
-  padding: 10px;
-  font-size: 15px;
-}
-
-#contact button[type=submit]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa;
 }
 
 body.homepage {
@@ -439,6 +395,7 @@ body.destinations .wrapper > main header.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
 }
 body.destinations .wrapper > main header.main h1 {
   font-size: 3rem;
@@ -544,6 +501,83 @@ body.destinations .destinations-list .destination-item {
   padding: 15px;
   display: flex;
   flex-flow: column;
+}
+
+body.contact {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.contact .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.contact .wrapper > header {
+  display: none;
+}
+body.contact .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.contact .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.contact .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.contact .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.contact .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.contact .wrapper > main {
+    padding: 60px;
+  }
+}
+body.contact .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.contact .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.contact .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.contact .wrapper > main h2 {
+  text-align: left;
+}
+body.contact textarea {
+  resize: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -191,25 +191,32 @@ function destination(){
 
   function contact(){
     contactForm = `
-    <div class="containerCustom">
             <form id="contact">
-                <fieldset>
-                    <input placeholder="nom" type="text" tabindex="1" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="adresse mail" type="email" tabindex="2" required>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="numéro de téléphone (facultatif)" type="tel" tabindex="3" required>
-                </fieldset>
-                <fieldset>
-                    <textarea placeholder="message..." tabindex="5" required></textarea>
-                </fieldset>
-                <fieldset>
-                    <button name="Envoyez" type="submit" id="contact-submit" data-submit="...Envoie">Submit</button>
-                </fieldset>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Votre nom"  tabindex="1" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Votre adresse mail" tabindex="2" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Votre numéro de téléphone (facultatif)" tabindex="3" required>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="8" placeholder="Votre message..." tabindex="5" required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary" id="contact-submit">
+                      <i class="fa fa-envelope"></i>
+                      Envoyez
+                    </button>
+                </div>
             </form>
-        </div>
     `
 
       $('#contact').html(contactForm);
